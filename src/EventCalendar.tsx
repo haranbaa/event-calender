@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   eachDayOfInterval,
   format,
@@ -16,11 +17,9 @@ interface Event {
   title: string;
 }
 
-interface EventCalendarProps {
-  events: Event[];
-}
+const EventCalendar = () => {
+  const [events, setEvents] = useState<Event[]>([]); // State for events
 
-const EventCalendar = ({ events }: EventCalendarProps) => {
   const currentDate = new Date();
 
   // Get the first and last day of the current month
